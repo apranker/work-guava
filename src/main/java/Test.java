@@ -1,5 +1,6 @@
 import org.slf4j.Logger;
-import uriquery.Query;
+import uriquery.Nquery;
+
 
 import java.io.IOException;
 
@@ -10,9 +11,9 @@ public class Test {
     Logger logger = org.slf4j.LoggerFactory.getLogger(Test.class);
 
     public static void main(String[] args) throws IOException {
-        Query query = new Query("D://test.txt");
+        Nquery query = new Nquery("D://test.txt");
         query.countQuery();
-        query.topNOfHttp(10);
+        query.topNOfHttp();
         query.countOfType();
         query.countOfAAA();
     }
