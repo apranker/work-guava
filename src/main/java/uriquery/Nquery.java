@@ -33,7 +33,9 @@ public class Nquery {
             uriInfos.add(new UriInfo(tem.get(0),tem.get(1)));
         }
     }
-
+    /**
+     * 统计请求总数
+     */
     public int countQuery() {
         logger.info("Count:{}", uriInfos.size());
         return uriInfos.size();
@@ -65,7 +67,9 @@ public class Nquery {
         }
         return sortMap;
     }
-
+    /**
+     * 获取根据请求类型统计
+     */
     public Multiset<String> countOfType() {
         Multiset<String> countSet = HashMultiset.create();
         for (UriInfo uriInfo : uriInfos) {
@@ -75,7 +79,9 @@ public class Nquery {
         logger.info("POST :{}",countSet.count("POST"));
         return countSet;
     }
-
+    /**
+     * 获取URI值的第一个字段进行统计
+     */
     public Multiset<String> countOfAAA() {
         Multiset<String> resultSet = HashMultiset.create();
         for (UriInfo uriInfo : uriInfos) {
